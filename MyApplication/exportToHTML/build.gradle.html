@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>build.gradle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #008000; font-weight: bold;}
+.s2 { color: #0000ff;}
+.s3 { color: #000043; font-weight: bold;}
+.s4 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+build.gradle</font>
+</center></td></tr></table>
+<pre>plugins {
+    id <span class="s1">'com.android.application'</span>
+}
+
+android {
+    compileSdk <span class="s2">32</span>
+
+    defaultConfig {
+        applicationId <span class="s1">&quot;com.example.sns&quot;</span>
+        minSdk <span class="s2">21</span>
+        targetSdk <span class="s2">32</span>
+        versionCode <span class="s2">1</span>
+        versionName <span class="s1">&quot;1.0&quot;</span>
+
+        testInstrumentationRunner <span class="s1">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span>
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled <span class="s3">false</span>
+            proguardFiles getDefaultProguardFile(<span class="s1">'proguard-android-optimize.txt'</span>), <span class="s1">'proguard-rules.pro'</span>
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation <span class="s1">'androidx.appcompat:appcompat:1.4.1'</span>
+    implementation <span class="s1">'com.google.android.material:material:1.6.0'</span>
+    implementation <span class="s1">'androidx.constraintlayout:constraintlayout:2.1.3'</span>
+
+    implementation <span class="s1">'com.android.volley:volley:1.2.1'</span>
+    implementation <span class="s1">'com.google.code.gson:gson:2.8.5'</span>
+
+    testImplementation <span class="s1">'junit:junit:4.13.2'</span>
+    androidTestImplementation <span class="s1">'androidx.test.ext:junit:1.1.3'</span>
+    androidTestImplementation <span class="s1">'androidx.test.espresso:espresso-core:3.4.0'</span>
+
+    implementation <span class="s1">'com.github.bumptech.glide:glide:4.11.0'</span>
+    annotationProcessor <span class="s1">'com.github.bumptech.glide:compiler:4.11.0'</span>
+    implementation <span class="s1">'com.squareup.retrofit2:retrofit:2.9.0'</span>
+    implementation <span class="s1">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
+    implementation <span class="s1">'com.squareup.retrofit2:converter-scalars:2.5.0'</span>
+
+    <span class="s4">//circleimageview , https://github.com/hdodenhof/CircleImageView</span>
+    implementation <span class="s1">'de.hdodenhof:circleimageview:3.1.0'</span>
+
+}</pre>
+</body>
+</html>

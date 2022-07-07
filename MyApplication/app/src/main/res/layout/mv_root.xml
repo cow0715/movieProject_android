@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mv_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#D72DF4"
+        app:tabTextColor="#232222">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/apple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="apple tv+" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/coupang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="coupang play" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/disneyplus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="disney plus" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/netflix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="netflix" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tving" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/watcha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="watcha" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/wavve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wavve" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/mv_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mv_tabLayout">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/mv_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="625dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/mv_bottom_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

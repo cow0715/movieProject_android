@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/drawable/ic_calendar_minus_regular.xml" value="0.147" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/drawable/ic_chevron_left_solid.xml" value="0.147" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/drawable/ic_landmark_solid.xml" value="0.147" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.147" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/drawable/ic_plus_solid.xml" value="0.147" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_join.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.31846153846153846" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_post.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_post_item.xml" value="0.33" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_root.xml" value="0.2515625" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_sns.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/activity_upload.xml" value="0.33" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_card_activity_db.xml" value="0.28802083333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_card_activity_main.xml" value="0.28802083333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_card_person.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_cf_item.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_instagram_item.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/ex_movie_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/layout/fragment_post.xml" value="0.33" />
+        <entry key="..\:/Users/ITSC/Documents/jyp/project/MyApplication/app/src/main/res/menu/root_menu.xml" value="0.21770833333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/custom_indicator.xml" value="0.2775" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/edittext.xml" value="0.327" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_chevron_left_solid.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_image_regular.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_landmark_solid.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_plus_solid.xml" value="0.244" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/font/monoton.xml" value="0.3963541666666667" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_join.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_mv_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_post.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_post_item.xml" value="0.25833333333333336" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_root.xml" value="0.25" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_sns.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_test.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_upload.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_card_activity_db.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_card_activity_main.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_card_person.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_cf_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_instagram_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_list2_activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_list_activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_movie_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/ex_person_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.25833333333333336" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_like.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_profile.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_scrolling.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/fragment_search.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_cardView.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_cardview.xml" value="0.3518987341772152" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_detail_page.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_amazon.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_apple.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_coupang.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_disney.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_home.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_like.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_netflix.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_search.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_tving.xml" value="0.31645569620253167" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_watcha.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_fragment_wavve.xml" value="0.31645569620253167" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_login.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_null.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_root.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_search_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_search_view.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/mv_signup.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/tab_test.xml" value="0.2582278481012658" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/test.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/mv_bottom_menu.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/mv_root_menu.xml" value="0.23802083333333332" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/mv_top_menu.xml" value="0.36614583333333334" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/root_menu.xml" value="0.23802083333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
