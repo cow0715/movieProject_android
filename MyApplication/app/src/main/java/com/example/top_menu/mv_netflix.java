@@ -2,6 +2,7 @@ package com.example.top_menu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.Network.MovieAPI;
+import com.example.Network.mv_NetworkConfig;
+import com.example.javaCode;
+import com.example.movie.movieData.mv_ResponseDTO;
 import com.example.movie.movieData.mv_card_data;
 import com.example.movie.movieAdapter_test;
 import com.example.movie.onMovieItemClickListener;
@@ -20,9 +25,15 @@ import com.example.sns.R;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 
 public class mv_netflix extends Fragment {
 
+    movieAdapter_test adapter;
     private View view;
     private RecyclerView recyclerView_netflix;
 
@@ -68,31 +79,59 @@ public class mv_netflix extends Fragment {
             }
         });
 
+
+        getNetflixList();
         return view;
 
 
 
 
     }
+
+    void getNetflixList(){
+        Log.d("apitest", "getPostList");
+
+        Retrofit retrofit = mv_NetworkConfig.getClient();
+        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
+
+        movieAPI.getCompanyList("NETFLIX").enqueue(new Callback<mv_ResponseDTO<mv_card_data>>() {
+            @Override
+            public void onResponse(Call<mv_ResponseDTO<mv_card_data>> call, Response<mv_ResponseDTO<mv_card_data>> response) {
+                Log.d("apitest", response.toString());
+
+                if(response.code() == 200){
+                    mv_ResponseDTO mv_responseDTO = response.body();
+                    ArrayList<mv_card_data> list = (ArrayList<mv_card_data>) mv_responseDTO.getResultData();
+                    mv_card_data mv_card_data = list.get(0);
+
+                    Log.d("apitest", list.toString());
+                    Log.d("apitest", mv_card_data.getTitle());
+                    Log.d("apitest", mv_card_data.getContent());
+                    Log.d("apitest", mv_card_data.getMovie_img());
+
+                    resProcess(list);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<mv_ResponseDTO<mv_card_data>> call, Throwable t) {
+                Log.d("apiTest",t.getMessage());
+            }
+        });
+    }
+
+    public void resProcess(ArrayList<mv_card_data> list){
+
+        adapter.addCardDataList(list);
+
+        adapter.notifyDataSetChanged();
+    }
+
+
 }
 
 
-/*
-* View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView_home = view.findViewById(R.id.recycler_home);
 
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
-        recyclerView_home.setLayoutManager(gridLayoutManager);
-
-        snsAdapter = new SnsAdapter();
-        recyclerView_home.setAdapter(snsAdapter);
-
-        getSnsList();
-        //getSnsList2();
-
-        return view;
-* */
 
 
 

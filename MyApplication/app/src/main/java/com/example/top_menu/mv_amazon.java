@@ -28,7 +28,7 @@ public class mv_amazon extends Fragment {
 
     private View view;
     private RecyclerView recyclerView_amazon;
-    private Button btn;
+
 
 
 

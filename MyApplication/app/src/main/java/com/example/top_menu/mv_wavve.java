@@ -2,6 +2,7 @@ package com.example.top_menu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.Network.MovieAPI;
+import com.example.Network.mv_NetworkConfig;
+import com.example.movie.movieData.mv_ResponseDTO;
 import com.example.movie.movieData.mv_card_data;
 import com.example.movie.movieAdapter_test;
 import com.example.movie.movieData.mv_search_data;
@@ -19,12 +23,28 @@ import com.example.movie.movieData.mv_detail_data;
 import com.example.movie.onMovieItemClickListener;
 import com.example.nextActivity;
 import com.example.sns.R;
+import com.example.sns.data.ResponseDTO;
+import com.example.sns.data.SnsData;
+import com.example.sns.network.SnsV1API;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 public class mv_wavve extends Fragment {
 
+    private movieAdapter_test adapter;
+    ArrayList<mv_card_data> list;
+
+
     private View view;
     private RecyclerView recyclerView_wavve;
+
 
     @Nullable
     @Override
@@ -36,6 +56,9 @@ public class mv_wavve extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView_wavve.setLayoutManager(gridLayoutManager);
 
+        adapter = new movieAdapter_test();
+
+
         mv_card_data movie1 = new mv_card_data(0,"범죄도시","https://www.kukinews.com/data/kuk/image/2022/05/18/kuk202205180005.680x.0.jpg", "영화");
         mv_card_data movie2 = new mv_card_data(0,"종이의 집","https://i.ytimg.com/vi/53T3RIohIi0/maxresdefault.jpg", "드라마");
         mv_card_data movie3 = new mv_card_data(0,"무한도전","https://img6.yna.co.kr/etc/inner/KR/2018/01/12/AKR20180112117600005_01_i_P4.jpg", "예능");
@@ -45,11 +68,6 @@ public class mv_wavve extends Fragment {
         mv_card_data movie7 = new mv_card_data(0,"마녀","http://t1.daumcdn.net/movie/72e53e2dc1550ae95fe82a73b80d82221a617a10", "영화");
         mv_card_data movie8 = new mv_card_data(0,"지금 만나러 갑니다","https://upload.wikimedia.org/wikipedia/ko/5/5a/%EC%A7%80%EA%B8%88%2C_%EB%A7%8C%EB%82%98%EB%9F%AC_%EA%B0%91%EB%8B%88%EB%8B%A4_%28%EC%98%81%ED%99%94%29_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg", "영화");
         mv_card_data movie9 = new mv_card_data(0,"아마겟돈","https://image.yes24.com/momo/TopCate09/MidCate07/862194.jpg", "영화");
-
-
-
-        movieAdapter_test adapter = new movieAdapter_test();
-
 
         adapter.addCardData(movie1);
         adapter.addCardData(movie2);
@@ -64,6 +82,8 @@ public class mv_wavve extends Fragment {
 
         recyclerView_wavve.setAdapter(adapter);
 
+
+        // 리스너
         adapter.setOnItemClickListener(new onMovieItemClickListener() {
             @Override
             public void onItemClickListener(RecyclerView.ViewHolder holder, View view, int position) {
@@ -74,10 +94,52 @@ public class mv_wavve extends Fragment {
             }
         });
 
+
+        //getSnsList();
+
         return view;
 
-
-
-
     }
+
+
+
+    void getSnsList(){
+        Log.d("apitest", "getPostList");
+
+        Retrofit retrofit = mv_NetworkConfig.getClient();
+        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
+
+        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_card_data>>() {
+            @Override
+            public void onResponse(Call<mv_ResponseDTO<mv_card_data>> call, Response<mv_ResponseDTO<mv_card_data>> response) {
+                Log.d("apitest", response.toString());
+
+                if(response.code() == 200){
+                    mv_ResponseDTO mv_responseDTO = response.body();
+                    list = (ArrayList<mv_card_data>) mv_responseDTO.getResultData();
+                    mv_card_data mv_card_data = list.get(0);
+
+                    Log.d("apitest", list.toString());
+                    Log.d("apitest", mv_card_data.getTitle());
+                    Log.d("apitest", mv_card_data.getContent());
+                    Log.d("apitest", mv_card_data.getMovie_img());
+
+                    resProcess(list);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<mv_ResponseDTO<mv_card_data>> call, Throwable t) {
+                Log.d("apiTest",t.getMessage());
+            }
+        });
+    }
+
+    public void resProcess(ArrayList<mv_card_data> list){
+
+        adapter.addCardDataList(list);
+
+        adapter.notifyDataSetChanged();
+    }
+
 }

@@ -145,6 +145,10 @@ public class movieAdapter_test extends RecyclerView.Adapter<RecyclerView.ViewHol
         return (mv_detail_data) items.get(position);
     }
 
+    public void addCardDataList(ArrayList<mv_card_data> card_data){
+        items.addAll(card_data);
+    }
+
 
     //리스너
 

@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ViewPagerAdapter;
 import com.example.movie.movieAdapter_test;
 import com.example.movie.movieData.mv_search_data;
 import com.example.movie.movieData.mv_detail_data;
@@ -32,13 +34,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.top_menu.mv_amazon;
+import com.example.top_menu.mv_apple;
+import com.example.top_menu.mv_coupang;
+import com.example.top_menu.mv_disney;
+import com.example.top_menu.mv_netflix;
+import com.example.top_menu.mv_tving;
+import com.example.top_menu.mv_watcha;
+import com.example.top_menu.mv_wavve;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class mv_HomeFragment extends Fragment {
+
+
 
     private View view;
     private RecyclerView recyclerView_home;
@@ -47,6 +61,8 @@ public class mv_HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.mv_null, container, false);
+
+
 
 //        recyclerView_home = view.findViewById(R.id.mv_recycler_home);
 //
