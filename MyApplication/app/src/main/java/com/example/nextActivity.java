@@ -28,6 +28,9 @@ public class nextActivity extends AppCompatActivity {
         setContentView(R.layout.mv_detail_page);
 
 
+
+
+
         webView = (WebView) findViewById(R.id.mv_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);

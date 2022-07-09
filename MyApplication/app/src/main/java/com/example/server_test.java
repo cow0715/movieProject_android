@@ -1,6 +1,5 @@
-package com.example.top_menu;
+package com.example;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,13 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.Network.MovieAPI;
 import com.example.Network.mv_NetworkConfig;
-import com.example.javaCode;
+import com.example.movie.movieAdapter_test;
 import com.example.movie.movieData.mv_ResponseDTO;
 import com.example.movie.movieData.mv_card_data;
-import com.example.movie.movieAdapter_test;
-import com.example.movie.onMovieItemClickListener;
-import com.example.nextActivity;
 import com.example.sns.R;
+import com.example.sns.data.ResponseDTO;
+import com.example.sns.data.SnsData;
+import com.example.sns.network.NetworkConfig;
+import com.example.sns.network.SnsV1API;
+import com.example.sns.util.sns.SnsAdapter;
 
 import java.util.ArrayList;
 
@@ -31,43 +32,31 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
-public class mv_netflix extends Fragment {
+public class server_test extends Fragment {
+    private RecyclerView recyclerView_home;
+    movieAdapter_test snsAdapter;
 
-    movieAdapter_test adapter = new movieAdapter_test();
-    private View view;
-    private RecyclerView recyclerView_netflix;
-
+    ArrayList<SnsData> list;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.mv_fragment_netflix, container, false);
-
-        recyclerView_netflix = view.findViewById(R.id.recycler_netflix);
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        recyclerView_netflix.setLayoutManager(gridLayoutManager);
 
 
 
-        recyclerView_netflix.setAdapter(adapter);
+        View view = inflater.inflate(R.layout.server_test, container, false);
+        recyclerView_home = view.findViewById(R.id.recycler_test);
 
-        adapter.setOnItemClickListener(new onMovieItemClickListener() {
-            @Override
-            public void onItemClickListener(RecyclerView.ViewHolder holder, View view, int position) {
-                mv_card_data card_data = adapter.getCardData(position);
 
-                Intent intent = new Intent(getContext(), nextActivity.class);
-                startActivity(intent);
-            }
-        });
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
+        recyclerView_home.setLayoutManager(gridLayoutManager);
+
+        snsAdapter = new movieAdapter_test();
+        recyclerView_home.setAdapter(snsAdapter);
 
 
         getNetflixList();
+
         return view;
-
-
-
-
     }
 
     void getNetflixList(){
@@ -84,12 +73,24 @@ public class mv_netflix extends Fragment {
                 if(response.code() == 200){
                     mv_ResponseDTO mv_responseDTO = response.body();
                     ArrayList<mv_card_data> list = (ArrayList<mv_card_data>) mv_responseDTO.getResultData();
-                    mv_card_data mv_card_data = list.get(0);
 
-                    Log.d("apitest", list.toString());
-                    Log.d("apitest", mv_card_data.getTitle());
-                    Log.d("apitest", mv_card_data.getContent());
-                    Log.d("apitest", mv_card_data.getMovie_img());
+
+//                    for(int i=0; i<list.size(); i++){
+//                        mv_card_data mv_card_data = list.get(i);
+//                        Log.d("apitest", mv_card_data.getContent());
+//                        Log.d("apitest", list.toString());
+//                        Log.d("apitest", mv_card_data.getTitle());
+//                        Log.d("apitest", mv_card_data.getMovie_img());
+//
+//
+//
+//
+//                    }
+
+//                    mv_card_data movie1 = new mv_card_data(0,"범죄도시","https://www.kukinews.com/data/kuk/image/2022/05/18/kuk202205180005.680x.0.jpg", "영화");
+//
+//                    snsAdapter.addCardData(movie1);
+//                    snsAdapter.notifyDataSetChanged();
 
                     resProcess(list);
                 }
@@ -104,13 +105,15 @@ public class mv_netflix extends Fragment {
 
     public void resProcess(ArrayList<mv_card_data> list){
 
-        adapter.addCardDataList(list);
+        snsAdapter.addCardDataList(list);
 
-        adapter.notifyDataSetChanged();
+        snsAdapter.notifyDataSetChanged();
     }
-
-
 }
+
+
+
+
 
 
 

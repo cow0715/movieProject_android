@@ -30,5 +30,8 @@ public interface MovieAPI {
     @GET("movie/year/{release_year}") // 개봉년도 목록
     Call<mv_ResponseDTO<mv_card_data>> getYearList(@Path("release_year") String release_year);
 
+    @GET("movie/searchViewData")
+    Call<mv_ResponseDTO<mv_search_data>> getSearchViewList();
+
 
 }

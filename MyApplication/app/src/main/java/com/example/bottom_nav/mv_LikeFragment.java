@@ -29,7 +29,8 @@ public class mv_LikeFragment extends Fragment {
     private View view;
     private RecyclerView recyclerView_search;
 
-    private Button btn;
+    movieAdapter_test adapter = new movieAdapter_test();
+
 
     @Nullable
     @Override
@@ -43,25 +44,24 @@ public class mv_LikeFragment extends Fragment {
 
 
 
-        movieAdapter_test adapter = new movieAdapter_test();
 
 
-        mv_search_data search_data = new mv_search_data(1,"종이의 집","https://i.ytimg.com/vi/53T3RIohIi0/maxresdefault.jpg","범죄","2019","드라마","넷플릭스");
-        mv_search_data search_data2 = new mv_search_data(1,"탑건","https://upload.wikimedia.org/wikipedia/ko/2/20/%ED%83%91%EA%B1%B4_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg","액션","2022","영화","아마존");
-        mv_search_data search_data3 = new mv_search_data(1,"마녀","http://t1.daumcdn.net/movie/72e53e2dc1550ae95fe82a73b80d82221a617a10","액션","2017","영화","왓챠");
-
-        adapter.addSearchData(search_data);
-        adapter.addSearchData(search_data2);
-        adapter.addSearchData(search_data3);
-        adapter.addSearchData(search_data);
-        adapter.addSearchData(search_data2);
-        adapter.addSearchData(search_data3);
-        adapter.addSearchData(search_data);
-        adapter.addSearchData(search_data2);
-        adapter.addSearchData(search_data3);
-        adapter.addSearchData(search_data);
-        adapter.addSearchData(search_data2);
-        adapter.addSearchData(search_data3);
+//        mv_search_data search_data = new mv_search_data(1,"종이의 집","https://i.ytimg.com/vi/53T3RIohIi0/maxresdefault.jpg","범죄","2019","드라마","넷플릭스");
+//        mv_search_data search_data2 = new mv_search_data(1,"탑건","https://upload.wikimedia.org/wikipedia/ko/2/20/%ED%83%91%EA%B1%B4_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg","액션","2022","영화","아마존");
+//        mv_search_data search_data3 = new mv_search_data(1,"마녀","http://t1.daumcdn.net/movie/72e53e2dc1550ae95fe82a73b80d82221a617a10","액션","2017","영화","왓챠");
+//
+//        adapter.addSearchData(search_data);
+//        adapter.addSearchData(search_data2);
+//        adapter.addSearchData(search_data3);
+//        adapter.addSearchData(search_data);
+//        adapter.addSearchData(search_data2);
+//        adapter.addSearchData(search_data3);
+//        adapter.addSearchData(search_data);
+//        adapter.addSearchData(search_data2);
+//        adapter.addSearchData(search_data3);
+//        adapter.addSearchData(search_data);
+//        adapter.addSearchData(search_data2);
+//        adapter.addSearchData(search_data3);
 
 
 

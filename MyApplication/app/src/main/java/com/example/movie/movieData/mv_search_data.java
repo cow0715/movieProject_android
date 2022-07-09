@@ -3,7 +3,7 @@ package com.example.movie.movieData;
 public class mv_search_data {
 
     private String title;
-    private String movie_img;
+    private String movieImg;
     private String genre;
     private String release_year;
     private String content;
@@ -11,10 +11,10 @@ public class mv_search_data {
 
     int type;
 
-    public mv_search_data(int type, String title, String movie_img, String genre, String release_year, String content, String company) {
+    public mv_search_data(int type, String title, String movieImg, String genre, String release_year, String content, String company) {
         this.type = type;
         this.title = title;
-        this.movie_img = movie_img;
+        this.movieImg = movieImg;
         this.genre = genre;
         this.release_year = release_year;
         this.content = content;
@@ -30,11 +30,11 @@ public class mv_search_data {
     }
 
     public String getMovie_img() {
-        return movie_img;
+        return movieImg;
     }
 
     public void setMovie_img(String movie_img) {
-        this.movie_img = movie_img;
+        this.movieImg = movie_img;
     }
 
     public String getGenre() {

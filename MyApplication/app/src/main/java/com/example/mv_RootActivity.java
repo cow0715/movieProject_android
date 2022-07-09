@@ -113,7 +113,7 @@ public class mv_RootActivity extends AppCompatActivity {
 //        Button button = findViewById(R.id.mv_btn1);
 //        button.setOnClickListener(view -> {
 //
-//            getSupportFragmentManager().beginTransaction().replace(R.id.mv_container, fragmentNetflix).commit();
+//           // getSupportFragmentManager().beginTransaction().replace(R.id.mv_container, fragmentNetflix).commit();
 //
 //
 //        });

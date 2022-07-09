@@ -14,42 +14,44 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import com.example.Network.mv_NetworkConfig;
+import com.example.movie.movieData.mv_detail_data;
 
 public class javaCode {
 
     movieAdapter_test adapter;
 
-    void getSnsList(){
-        Log.d("apitest", "getPostList");
 
-        Retrofit retrofit = mv_NetworkConfig.getClient();
-        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
-
-        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_card_data>>() {
-            @Override
-            public void onResponse(Call<mv_ResponseDTO<mv_card_data>> call, Response<mv_ResponseDTO<mv_card_data>> response) {
-                Log.d("apitest", response.toString());
-
-                if(response.code() == 200){
-                    mv_ResponseDTO mv_responseDTO = response.body();
-                    ArrayList<mv_card_data> list = (ArrayList<mv_card_data>) mv_responseDTO.getResultData();
-                    mv_card_data mv_card_data = list.get(0);
-
-                    Log.d("apitest", list.toString());
-                    Log.d("apitest", mv_card_data.getTitle());
-                    Log.d("apitest", mv_card_data.getContent());
-                    Log.d("apitest", mv_card_data.getMovie_img());
-
-                    resProcess(list);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<mv_ResponseDTO<mv_card_data>> call, Throwable t) {
-                Log.d("apiTest",t.getMessage());
-            }
-        });
-    }
+//    void getMovieList(){
+//        Log.d("apitest", "getPostList");
+//
+//        Retrofit retrofit = mv_NetworkConfig.getClient();
+//        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
+//
+//        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_detail_data>>() {
+//            @Override
+//            public void onResponse(Call<mv_ResponseDTO<mv_detail_data>> call, Response<mv_ResponseDTO<mv_detail_data>> response) {
+//                Log.d("apitest", response.toString());
+//
+//                if(response.code() == 200){
+//                    mv_ResponseDTO mv_responseDTO = response.body();
+//                    ArrayList<mv_detail_data> list = (ArrayList<mv_detail_data>) mv_responseDTO.getResultData();
+//                    mv_detail_data mv_detail_data = list.get(0);
+//
+//                    Log.d("apitest", list.toString());
+//                    Log.d("apitest", mv_detail_data.getTitle());
+//                    //Log.d("apitest", mv_detail_data.getContent());
+//                    Log.d("apitest", mv_detail_data.getMovie_img());
+//
+//                    resProcess2(list);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<mv_ResponseDTO<mv_detail_data>> call, Throwable t) {
+//                Log.d("apiTest",t.getMessage());
+//            }
+//        });
+//    }
 
 
     void getAmazonList(){
@@ -217,7 +219,7 @@ public class javaCode {
     }
 
 
-    void getTvingList(){
+     void getTvingList(){
         Log.d("apitest", "getPostList");
 
         Retrofit retrofit = mv_NetworkConfig.getClient();
@@ -321,6 +323,13 @@ public class javaCode {
     public void resProcess(ArrayList<mv_card_data> list){
 
         adapter.addCardDataList(list);
+
+        adapter.notifyDataSetChanged();
+    }
+
+    public void resProcess2(ArrayList<mv_detail_data> list){
+
+        adapter.addDetailDataList(list);
 
         adapter.notifyDataSetChanged();
     }
