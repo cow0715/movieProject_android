@@ -9,7 +9,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class mv_NetworkConfig {
 
-    private final static String BASE_URL = "http://172.30.1.25:8080/api/"; // 서버 URL
+    private final static String BASE_URL = "http://172.30.1.45:8080/api/"; // 서버 URL
     private static Retrofit retrofit = null;
 
 

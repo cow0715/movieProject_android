@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 public interface MovieAPI {
 
     @GET("movie") //전체 목록
-    Call<mv_ResponseDTO<mv_card_data>> getMovieList();
+    Call<mv_ResponseDTO<mv_detail_data>> getMovieList();
 
     @GET("movie/actor/{actor}") // 배우 출연작 목록
     Call<mv_ResponseDTO<mv_card_data>> getActorList(@Path("actor") String actor);
@@ -30,8 +30,11 @@ public interface MovieAPI {
     @GET("movie/year/{release_year}") // 개봉년도 목록
     Call<mv_ResponseDTO<mv_card_data>> getYearList(@Path("release_year") String release_year);
 
-    @GET("movie/searchViewData")
+    @GET("movie/searchViewData")  // 서치뷰 데이터 가져오기
     Call<mv_ResponseDTO<mv_search_data>> getSearchViewList();
+
+    @GET("movie/movie/{title}") //
+    Call<mv_ResponseDTO<mv_detail_data>> getDetailList(@Path("title") String title);
 
 
 }

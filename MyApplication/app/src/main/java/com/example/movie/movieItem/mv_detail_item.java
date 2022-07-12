@@ -1,6 +1,8 @@
 package com.example.movie.movieItem;
 
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,10 +13,12 @@ import com.bumptech.glide.Glide;
 import com.example.movie.movieData.mv_detail_data;
 import com.example.movie.movieData.mv_search_data;
 import com.example.movie.onMovieItemClickListener;
+import com.example.nextActivity;
 import com.example.sns.R;
 
 
 public class mv_detail_item extends RecyclerView.ViewHolder {
+    private WebView webView;
 
     ImageView detail_img;
     TextView running_time;
@@ -24,6 +28,7 @@ public class mv_detail_item extends RecyclerView.ViewHolder {
     TextView rate;
     TextView detail_title;
     TextView detail_genre;
+    TextView detail_movie_url;
 
 
     public mv_detail_item(@NonNull View itemView, final onMovieItemClickListener listener) {
@@ -67,6 +72,12 @@ public class mv_detail_item extends RecyclerView.ViewHolder {
         running_time.setText(String.valueOf(detail_data.getRunning_time()));
         release_date.setText(detail_data.getRelease_date());
 
+
+        webView = (WebView) webView.findViewById(R.id.mv_webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(url);
+        webView.setWebChromeClient(new WebChromeClient());
+        //webView.setWebViewClient(new nextActivity.WebViewClientClass());
 
     }
 }

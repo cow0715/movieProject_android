@@ -58,8 +58,10 @@ public class mv_SearchFragment extends Fragment {
             @Override
             public void onItemClickListener(RecyclerView.ViewHolder holder, View view, int position) {
                 mv_search_data searchData = adapter.getSearchData(position);
+                String mv_title = searchData.getTitle();
 
                 Intent intent = new Intent(getContext(), nextActivity.class);
+                intent.putExtra("title", mv_title);
                 startActivity(intent);
             }
         });

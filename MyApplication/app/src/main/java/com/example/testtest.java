@@ -30,8 +30,8 @@ public class testtest extends AppCompatActivity {
         setContentView(R.layout.activity_testtest);
 
 
-        getSearchList();
-        //getMovieList();
+        //getSearchList();
+        getMovieList();
     }
 
     void getMovieList(){
@@ -40,31 +40,35 @@ public class testtest extends AppCompatActivity {
         Retrofit retrofit = mv_NetworkConfig.getClient();
         MovieAPI movieAPI = retrofit.create(MovieAPI.class);
 
-        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_card_data>>() {
+        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_detail_data>>() {
             @Override
-            public void onResponse(Call<mv_ResponseDTO<mv_card_data>> call, Response<mv_ResponseDTO<mv_card_data>> response) {
+            public void onResponse(Call<mv_ResponseDTO<mv_detail_data>> call, Response<mv_ResponseDTO<mv_detail_data>> response) {
                 Log.d("apitest", response.toString());
 
                 if(response.code() == 200){
                     mv_ResponseDTO mv_responseDTO = response.body();
-                    ArrayList<mv_card_data> list = (ArrayList<mv_card_data>) mv_responseDTO.getResultData();
+                    ArrayList<mv_detail_data> list = (ArrayList<mv_detail_data>) mv_responseDTO.getResultData();
 
                     for(int i=0; i<list.size(); i++){
-                        mv_card_data mv_card_data = list.get(i);
+                        mv_detail_data mv_detail_data = list.get(i);
 
                         Log.d("apitest", list.toString());
-                        Log.d("apitest", mv_card_data.getTitle());
-                        Log.d("apitest", mv_card_data.getMovie_img());
+                        Log.d("apitest", mv_detail_data.getTitle());
+                        Log.d("apitest", mv_detail_data.getMovie_img());
+                        Log.d("apitest", String.valueOf(mv_detail_data.getRunning_time()));
+                        Log.d("apitest", mv_detail_data.getGenre());
+                        Log.d("apitest", mv_detail_data.getRelease_date());
+                        Log.d("apitest", mv_detail_data.getCountry());
 
                     }
 
 
-                    resProcess(list);
+                    resProcess2(list);
                 }
             }
 
             @Override
-            public void onFailure(Call<mv_ResponseDTO<mv_card_data>> call, Throwable t) {
+            public void onFailure(Call<mv_ResponseDTO<mv_detail_data>> call, Throwable t) {
                 Log.d("apiTest",t.getMessage());
             }
         });

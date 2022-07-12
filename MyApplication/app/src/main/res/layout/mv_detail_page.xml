@@ -27,7 +27,8 @@
                     android:id="@+id/mv_detail_img"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:srcCompat="@drawable/user" />
+                    android:layout_margin="20dp"
+                    tools:srcCompat="@tools:sample/avatars" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -39,7 +40,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:textAlignment="center"
                         android:layout_weight="7"
+                        android:textSize="28sp"
                         android:text="제목" />
 
                     <ImageButton
@@ -76,7 +80,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="상영시간"
-                        android:textAlignment="center" />
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="분" />
 
                     <TextView
                         android:id="@+id/mv_detail_genre"
@@ -116,8 +127,7 @@
                     android:id="@+id/mv_detail_story"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="통일을 앞둔 한반도를 배경으로 천재적 전략가와 각기 다른 개성 및 능력을 지닌 강도들이 기상천외한 변수에 맞서며 벌이는 사상 초유의 인질 강도극을 그린 넷플릭스 시리즈"
+                    android:layout_margin="10dp"
                     android:textSize="16sp" />
 
                 <TextView

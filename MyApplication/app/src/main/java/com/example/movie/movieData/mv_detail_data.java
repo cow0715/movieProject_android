@@ -2,23 +2,24 @@ package com.example.movie.movieData;
 
 public class mv_detail_data {
     private String title;
-    private String movieImg;
-    private int running_time;
-    private String genre;
-    private String release_date;
-    private String country;
     private String story;
+    private String movieImg;
+    private int runningTime;
+    private String genre;
+    private String releaseDate;
+    private String country;
     private String rate;
-
+    private String movieUrl;
+    private String actor_id;
     int type;
 
-    public mv_detail_data(int type, String title, String movieImg, int running_time, String genre, String release_date, String country, String story, String rate) {
+    public mv_detail_data(int type, String title, String movieImg, int runningTime, String genre, String releaseDate, String country, String story, String rate) {
         this.type = type;
         this.title = title;
         this.movieImg = movieImg;
-        this.running_time = running_time;
+        this.runningTime = runningTime;
         this.genre = genre;
-        this.release_date = release_date;
+        this.releaseDate = releaseDate;
         this.country = country;
         this.story = story;
         this.rate = rate;
@@ -41,11 +42,11 @@ public class mv_detail_data {
     }
 
     public int getRunning_time() {
-        return running_time;
+        return runningTime;
     }
 
-    public void setRunning_time(int running_time) {
-        this.running_time = running_time;
+    public void setRunning_time(int runningTime) {
+        this.runningTime = runningTime;
     }
 
     public String getGenre() {
@@ -57,11 +58,11 @@ public class mv_detail_data {
     }
 
     public String getRelease_date() {
-        return release_date;
+        return releaseDate;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
+    public void setRelease_date(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public String getCountry() {
@@ -90,5 +91,21 @@ public class mv_detail_data {
 
     public int getType() {
         return type;
+    }
+
+    public String getMovie_url() {
+        return movieUrl;
+    }
+
+    public void setMovie_url(String movieUrl) {
+        this.movieUrl = movieUrl;
+    }
+
+    public String getActor_id() {
+        return actor_id;
+    }
+
+    public void setActor_id(String actor_id) {
+        this.actor_id = actor_id;
     }
 }

@@ -69,8 +69,10 @@ public class mv_amazon extends Fragment {
             @Override
             public void onItemClickListener(RecyclerView.ViewHolder holder, View view, int position) {
                 mv_card_data card_data = adapter.getCardData(position);
+                String mv_title = card_data.getTitle();
 
                 Intent intent = new Intent(getContext(), nextActivity.class);
+                intent.putExtra("title", mv_title);
                 startActivity(intent);
             }
         });
@@ -119,5 +121,7 @@ public class mv_amazon extends Fragment {
 
         adapter.notifyDataSetChanged();
     }
+
+
 
 }

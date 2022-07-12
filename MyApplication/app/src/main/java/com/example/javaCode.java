@@ -21,37 +21,37 @@ public class javaCode {
     movieAdapter_test adapter;
 
 
-//    void getMovieList(){
-//        Log.d("apitest", "getPostList");
-//
-//        Retrofit retrofit = mv_NetworkConfig.getClient();
-//        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
-//
-//        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_detail_data>>() {
-//            @Override
-//            public void onResponse(Call<mv_ResponseDTO<mv_detail_data>> call, Response<mv_ResponseDTO<mv_detail_data>> response) {
-//                Log.d("apitest", response.toString());
-//
-//                if(response.code() == 200){
-//                    mv_ResponseDTO mv_responseDTO = response.body();
-//                    ArrayList<mv_detail_data> list = (ArrayList<mv_detail_data>) mv_responseDTO.getResultData();
-//                    mv_detail_data mv_detail_data = list.get(0);
-//
-//                    Log.d("apitest", list.toString());
-//                    Log.d("apitest", mv_detail_data.getTitle());
-//                    //Log.d("apitest", mv_detail_data.getContent());
-//                    Log.d("apitest", mv_detail_data.getMovie_img());
-//
-//                    resProcess2(list);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<mv_ResponseDTO<mv_detail_data>> call, Throwable t) {
-//                Log.d("apiTest",t.getMessage());
-//            }
-//        });
-//    }
+    public void getMovieList(){
+        Log.d("apitest", "getDetailList");
+
+        Retrofit retrofit = mv_NetworkConfig.getClient();
+        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
+
+        movieAPI.getMovieList().enqueue(new Callback<mv_ResponseDTO<mv_detail_data>>() {
+            @Override
+            public void onResponse(Call<mv_ResponseDTO<mv_detail_data>> call, Response<mv_ResponseDTO<mv_detail_data>> response) {
+                Log.d("apitest", response.toString());
+
+                if(response.code() == 200){
+                    mv_ResponseDTO mv_responseDTO = response.body();
+                    ArrayList<mv_detail_data> list = (ArrayList<mv_detail_data>) mv_responseDTO.getResultData();
+                    mv_detail_data mv_detail_data = list.get(0);
+
+                    Log.d("apitest", list.toString());
+                    Log.d("apitest", mv_detail_data.getTitle());
+                    //Log.d("apitest", mv_detail_data.getContent());
+                    Log.d("apitest", mv_detail_data.getMovie_img());
+
+                    resProcess2(list);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<mv_ResponseDTO<mv_detail_data>> call, Throwable t) {
+                Log.d("apiTest",t.getMessage());
+            }
+        });
+    }
 
 
     void getAmazonList(){
@@ -312,6 +312,39 @@ public class javaCode {
 
             @Override
             public void onFailure(Call<mv_ResponseDTO<mv_card_data>> call, Throwable t) {
+                Log.d("apiTest",t.getMessage());
+            }
+        });
+    }
+
+
+    public void getDetailList(){
+        Log.d("apitest", "getDetailList");
+
+        Retrofit retrofit = mv_NetworkConfig.getClient();
+        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
+
+        movieAPI.getDetailList("").enqueue(new Callback<mv_ResponseDTO<mv_detail_data>>() {
+            @Override
+            public void onResponse(Call<mv_ResponseDTO<mv_detail_data>> call, Response<mv_ResponseDTO<mv_detail_data>> response) {
+                Log.d("apitest", response.toString());
+
+                if(response.code() == 200){
+                    mv_ResponseDTO mv_responseDTO = response.body();
+                    ArrayList<mv_detail_data> list = (ArrayList<mv_detail_data>) mv_responseDTO.getResultData();
+                    mv_detail_data mv_detail_data = list.get(0);
+
+                    Log.d("apitest", list.toString());
+                    Log.d("apitest", mv_detail_data.getTitle());
+                    //Log.d("apitest", mv_detail_data.getContent());
+                    Log.d("apitest", mv_detail_data.getMovie_img());
+
+                    resProcess2(list);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<mv_ResponseDTO<mv_detail_data>> call, Throwable t) {
                 Log.d("apiTest",t.getMessage());
             }
         });

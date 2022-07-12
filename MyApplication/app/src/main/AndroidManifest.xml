@@ -14,14 +14,13 @@
         android:usesCleartextTraffic="true">
 
 
-
-<!--        <activity android:name=".RootActivity" />-->
-<!--        <activity android:name=".LoginActivity" />-->
-<!--        <activity android:name=".JoinActivity" />-->
-        <activity android:name="com.example.nextActivity"/>
-        <activity android:name="com.example.mv_JoinActivity"/>
-        <activity android:name="com.example.mv_LoginActivity"/>
-        <activity android:name="com.example.mv_RootActivity"/>
+        <!--        <activity android:name=".RootActivity" />-->
+        <!--        <activity android:name=".LoginActivity" />-->
+        <!--        <activity android:name=".JoinActivity" />-->
+        <activity android:name="com.example.nextActivity" />
+        <activity android:name="com.example.mv_JoinActivity" />
+        <activity android:name="com.example.mv_LoginActivity" />
+        <activity android:name="com.example.mv_RootActivity" />
 
 
         <activity
